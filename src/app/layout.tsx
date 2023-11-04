@@ -16,10 +16,10 @@ export default function RootLayout({
 }) {
   return (
     <html
-      className={`${roboto_mono.className} bg-zinc-900 text-white`}
+      className={`${roboto_mono.className} bg-slate-300 text-white`}
       lang="tr"
     >
-      <body className="max-w-7xl mx-auto h-full">
+      <body className="mx-auto h-full">
         <Navbar />
         <div className="mt-12">{children}</div>
       </body>
