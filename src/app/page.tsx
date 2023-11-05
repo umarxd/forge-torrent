@@ -3,24 +3,37 @@
 import Torrent from "@/components/Torrent";
 import Torrents from "../../Torrents.json";
 import { ChangeEvent, useState } from "react";
-import { TorrentProps } from "../../types/TorrentProps";
+import { TorrentProps } from "../types/TorrentProps";
+import ErrorBox from "@/components/ErrorBox";
+import lastFiveTorrents from "../utils/getLastFiveTorrents";
 
 const page = () => {
-  const [input, setInput] = useState<string>("");
+  const [input, setInput] = useState("");
   const [queryList, setQueryList] = useState<TorrentProps[]>([]);
+  const [error, setError] = useState("");
 
   const search = (e: React.FormEvent<HTMLFormElement>, input: string) => {
-    setQueryList([]);
     e.preventDefault();
-    Torrents.forEach((element) => {
-      if (!input) return;
-      if (
-        input.toLowerCase().trim() ===
-        element.name.slice(0, input.trim().length).toLowerCase()
-      ) {
-        setQueryList((queryList) => [...queryList, element]);
-      }
-    });
+    setError("");
+    setQueryList([]);
+    if (!input) {
+      setError("Please enter a search term.");
+      return;
+    }
+
+    const filteredTorrents = Torrents.filter((element) =>
+      element.name
+        .toLowerCase()
+        .slice(0, input.trim().length)
+        .includes(input.toLowerCase().trim())
+    );
+
+    if (filteredTorrents.length === 0) {
+      setError("No results found.");
+      setQueryList([]);
+    } else {
+      setQueryList(filteredTorrents);
+    }
   };
 
   return (
@@ -39,11 +52,11 @@ const page = () => {
           placeholder="Search"
           className="text-black bg-slate-300 p-2 outline-none border-b border-black"
         />
-        <button>Search</button>
+        <button className="hover:border-b border-black">Search</button>
       </form>
 
       <div className="flex flex-col gap-6 items-center mt-6">
-        {queryList[0] &&
+        {queryList[0] ? (
           queryList.map((t) => (
             <Torrent
               key={t.name}
@@ -53,7 +66,28 @@ const page = () => {
               type={t.type}
               additionalNote={t.additionalNote}
             />
-          ))}
+          ))
+        ) : (
+          <ErrorBox error={error} />
+        )}
+
+        {!queryList[0] && (
+          <>
+            <h2 className="font-bold text-gray-600 border-b border-gray-600">
+              Recently added Torrents
+            </h2>
+            {lastFiveTorrents.map((t) => (
+              <Torrent
+                key={t.name}
+                name={t.name}
+                magnetLink={t.magnetLink}
+                size={t.size}
+                type={t.type}
+                additionalNote={t.additionalNote}
+              />
+            ))}
+          </>
+        )}
       </div>
     </div>
   );
