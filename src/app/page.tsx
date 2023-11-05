@@ -94,14 +94,3 @@ const page = () => {
 };
 
 export default page;
-
-/*  Object type 
-
-    {
-        "name": *name of the game,movie etc.*
-        "magnetLink": *magnet link of the torrent file* 
-        "size": *file size*
-        "additionalNote": *version number or installation tip* -This part is optional-
-    }
-
-*/
