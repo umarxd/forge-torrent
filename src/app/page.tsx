@@ -40,7 +40,7 @@ const page = () => {
     <div className="text-black">
       <form
         onSubmit={(e) => search(e, input)}
-        className="flex flex-col gap-2 justify-center items-center mt-20"
+        className="flex flex-col gap-1 justify-center items-center mt-20"
       >
         <input
           value={input}
