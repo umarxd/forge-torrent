@@ -7,7 +7,7 @@ import { TorrentProps } from "../types/TorrentProps";
 import ErrorBox from "@/components/ErrorBox";
 import lastFiveTorrents from "../utils/getLastFiveTorrents";
 
-const page = () => {
+const Home = () => {
   const [input, setInput] = useState("");
   const [queryList, setQueryList] = useState<TorrentProps[]>([]);
   const [error, setError] = useState("");
@@ -93,4 +93,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Home;
