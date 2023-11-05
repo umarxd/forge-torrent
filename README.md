@@ -10,4 +10,4 @@
 
 ### Note
 
-- Feel free contribute, I'll be merging the changes as long the it is a legit torrent.
+- Feel free contribute, I'll be merging the changes as long as the torrent is legit.
