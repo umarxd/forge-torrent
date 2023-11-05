@@ -1,9 +1,4 @@
-interface TorrentProps {
-  name: string;
-  magnetLink: string;
-  size: string;
-  additionalNote: string | undefined;
-}
+import { TorrentProps } from "../../types/TorrentProps";
 
 const Torrent: React.FC<TorrentProps> = ({
   name,
@@ -12,7 +7,7 @@ const Torrent: React.FC<TorrentProps> = ({
   additionalNote,
 }) => {
   return (
-    <div className="border p-2 flex gap-2 justify-center items-center">
+    <div className="p-2 flex gap-2 justify-center items-center">
       <div>
         <div className="text-md font-bold">{name}</div>
         <div className="text-xs">{additionalNote}</div>

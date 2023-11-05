@@ -15,10 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      className={`${roboto_mono.className} bg-slate-300 text-white`}
-      lang="tr"
-    >
+    <html className={`${roboto_mono.className} bg-slate-300`} lang="tr">
       <body className="mx-auto h-full">
         <Navbar />
         <div className="mt-12">{children}</div>
