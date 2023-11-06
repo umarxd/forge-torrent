@@ -1,0 +1,17 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model torrent{
+     id String  @id @default(auto()) @map("_id") @db.ObjectId
+     name String
+     magnetLink String
+     size String
+     type String
+     additionalNote String?
+}
