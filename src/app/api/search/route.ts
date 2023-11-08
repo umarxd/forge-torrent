@@ -16,6 +16,7 @@ export async function GET(req: Request) {
 
     take: 5,
   });
+  if (!results[0]) return new Response("No result", { status: 400 });
 
   return new Response(JSON.stringify(results));
 }

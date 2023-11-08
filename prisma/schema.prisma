@@ -7,11 +7,11 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model torrent{
-     id String  @id @default(auto()) @map("_id") @db.ObjectId
-     name String
-     magnetLink String
-     size String
-     type String
-     additionalNote String?
+model torrent {
+  id             String  @id @default(auto()) @map("_id") @db.ObjectId
+  name           String
+  magnetLink     String
+  size           String
+  type           String?
+  additionalNote String?
 }
