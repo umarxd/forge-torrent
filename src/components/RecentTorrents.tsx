@@ -7,17 +7,16 @@ const RecentTorrents: React.FC<{ recentTorrents: TorrentArray }> = ({
 }) => {
   console.log(recentTorrents);
   return (
-    <div className="container mx-auto  my-8">
-      <h2 className="text-center font-bold text-lg">Recently Added Torrents</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 m-4">
+    <div className="flex flex-col justify-center items-center   m-8 py-4">
+      <h2 className=" text-gray-600 border-gray-600 border-b w-max mb-2 font-bold text-md">
+        Recently Added Torrents
+      </h2>
+      <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4 text-sm">
         {recentTorrents.map((t) => (
-          <div
-            key={t.id}
-            className="py-2 text-center text-sm text-white bg-gray-600"
-          >
+          <div key={t.id} className="py-2 text-center text-sm ">
             <div>
               <div className="font-bold">{t.name}</div>
-              <div>{t.additionalNote}</div>
+              <div className="text-xs">{t.additionalNote}</div>
             </div>
             <div>{t.size}</div>
             <div>

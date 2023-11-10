@@ -40,7 +40,8 @@ const SearchTorrent = () => {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           type="text"
-          className="border-2 border-gray-600 p-2 bg-slate-300 font-bold outline-none "
+          placeholder="Search Here"
+          className="border-2 border-gray-600 p-2 font-bold outline-none bg-gray-700 text-gray-300 py-2 px-3 rounded-md focus:outline-none focus:ring focus:border-blue-300"
         />
         <button className="hover:border-b border-gray-600">Search</button>
       </form>
