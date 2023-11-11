@@ -1,6 +1,7 @@
 import SearchTorrent from "@/components/SearchTorrent";
 import db from "../../prisma/db";
 import RecentTorrents from "@/components/RecentTorrents";
+import Categories from "@/components/Categories";
 
 const getRecent = async () => {
   const recent = await db.torrent.findMany({
@@ -23,6 +24,7 @@ const Home = async () => {
   return (
     <div className="text-black flex flex-col mt-12">
       <SearchTorrent />
+      <Categories />
       <RecentTorrents recentTorrents={recent} />
     </div>
   );

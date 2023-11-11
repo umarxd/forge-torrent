@@ -9,10 +9,7 @@ const Torrent: React.FC<{ torrentData: TorrentProps }> = ({ torrentData }) => {
       </div>
       <div className="text-sm">{torrentData.size}</div>
       <div>
-        <a
-          className="text-blue-500 font-bold hover:border-b hover:border-blue-500"
-          href={torrentData.magnetLink}
-        >
+        <a className="text-blue-500 font-bold" href={torrentData.magnetLink}>
           Torrent
         </a>
       </div>

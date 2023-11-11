@@ -19,10 +19,7 @@ const RecentTorrents: React.FC<{ recentTorrents: TorrentArray }> = ({
             </div>
             <div>{t.size}</div>
             <div>
-              <a
-                className="text-blue-500 hover:border-b hover:border-blue-500 "
-                href={t.magnetLink}
-              >
+              <a className="text-blue-500" href={t.magnetLink}>
                 Torrent
               </a>
             </div>

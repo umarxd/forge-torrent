@@ -36,10 +36,7 @@ const Page = async ({ params }: PageProps) => {
           <div className="hidden sm:inline">|</div>
           <div className="font-bold">{t.size}</div>
           <div className="mt-2 sm:mt-0">
-            <a
-              className="block text-blue-500 font-bold hover:border-b hover:border-blue-500"
-              href={t.magnetLink}
-            >
+            <a className="block text-blue-500 font-bold" href={t.magnetLink}>
               Torrent
             </a>
           </div>

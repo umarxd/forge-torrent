@@ -44,7 +44,9 @@ const SearchTorrent = () => {
           placeholder="Search Here"
           className="border-2 border-gray-600 p-2 font-bold outline-none bg-gray-700 text-gray-300 py-2 px-3 rounded-md focus:outline-none focus:ring focus:border-blue-300"
         />
-        <button className="hover:border-b border-gray-600">Search</button>
+        <button className="text-sm border-2 border-transparent hover:border-blue-500 focus:border-blue-500 transition-all duration-300 ease-in-out py-1 px-2 rounded-md bg-gray-800 text-white hover:bg-gray-700 focus:outline-none">
+          Search
+        </button>
       </form>
       {error && <ErrorBox error={error} />}
       {isLoading && <LoadingSpinner />}
