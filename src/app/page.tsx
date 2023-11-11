@@ -19,9 +19,9 @@ const getRecent = async () => {
 
 const Home = async () => {
   const recent = await getRecent();
-  console.log(recent);
+
   return (
-    <div className="text-black flex flex-col">
+    <div className="text-black flex flex-col mt-12">
       <SearchTorrent />
       <RecentTorrents recentTorrents={recent} />
     </div>

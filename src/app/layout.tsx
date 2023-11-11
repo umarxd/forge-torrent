@@ -18,7 +18,7 @@ export default function RootLayout({
     <html className={`${roboto_mono.className} bg-slate-300`} lang="tr">
       <body className="mx-auto h-full">
         <Navbar />
-        <div className="mt-12">{children}</div>
+        <div>{children}</div>
       </body>
     </html>
   );

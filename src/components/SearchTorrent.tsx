@@ -19,6 +19,7 @@ const SearchTorrent = () => {
     setIsLoading(true);
     setTorrents([]);
     setError("");
+
     try {
       const { data } = await axios.get(`/api/search?q=${input}`);
       setIsLoading(false);
