@@ -1,8 +1,8 @@
 export interface TorrentProps {
   id: string;
   name: string;
-  type?: string;
-  additionalNote?: string | null | undefined;
+  type: string | null;
+  additionalNote: string | null;
   magnetLink: string;
   size: string;
 }
