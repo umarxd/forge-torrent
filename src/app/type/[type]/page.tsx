@@ -1,3 +1,4 @@
+import { TorrentProps } from "@/types/TorrentProps";
 import db from "../../../../prisma/db";
 import { notFound } from "next/navigation";
 
@@ -27,7 +28,7 @@ const Page = async ({ params }: PageProps) => {
 
   return (
     <div className="flex flex-col gap-4 w-full max-w-screen-md mt-12 mx-auto py-4 px-4 md:px-8 bg-gray-600 text-gray-300 text-sm font-medium rounded-md shadow-md">
-      {torrents.map((t) => (
+      {torrents.map((t: TorrentProps) => (
         <div
           key={t.id}
           className="flex flex-col gap-2 sm:flex-row sm:items-center items-center text-sm"
