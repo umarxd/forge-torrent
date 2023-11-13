@@ -20,7 +20,6 @@ const getRecent = async () => {
 
 const Home = async () => {
   const recent = await getRecent();
-
   return (
     <div className="text-black flex flex-col mt-12">
       <SearchTorrent />

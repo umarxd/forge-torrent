@@ -1,10 +1,9 @@
 import { TorrentProps } from "@/types/TorrentProps";
 
-type TorrentArray = TorrentProps[];
-
-const RecentTorrents: React.FC<{ recentTorrents: TorrentArray }> = ({
-  recentTorrents,
-}) => {
+interface TorrentArray {
+  recentTorrents: TorrentProps[];
+}
+const RecentTorrents: React.FC<TorrentArray> = ({ recentTorrents }) => {
   return (
     <div className="flex flex-col justify-center items-center   m-8 py-4">
       <h2 className=" text-gray-600 border-gray-600 border-b w-max mb-2 font-bold text-md">

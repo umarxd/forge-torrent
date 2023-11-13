@@ -30,7 +30,7 @@ const Page = async ({ params }: PageProps) => {
       {torrents.map((t) => (
         <div
           key={t.id}
-          className="flex flex-col gap-2 sm:flex-row sm:items-center text-sm"
+          className="flex flex-col gap-2 sm:flex-row sm:items-center items-center text-sm"
         >
           <div className="font-bold">{t.name}</div>
           <div className="hidden sm:inline">|</div>
