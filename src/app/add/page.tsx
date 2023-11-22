@@ -11,17 +11,19 @@ interface FormData {
   size: string;
   type?: string;
   additionalNote?: string;
+  developerPassword: string;
 }
 
 const Page = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     name: "",
     magnetLink: "",
     size: "",
     type: "",
     additionalNote: "",
+    developerPassword: "",
   });
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -53,6 +55,14 @@ const Page = () => {
         onSubmit={(e) => add(e)}
         className="flex flex-col gap-3 justify-center items-center text-gray-600 text-lg"
       >
+        <input
+          type="text"
+          name="developerPassword"
+          placeholder="developer password"
+          value={formData.developerPassword}
+          onChange={handleInputChange}
+          className="text-sm border-2 border-blue-500 outline-none bg-gray-800 text-gray-300 p-2 rounded-md focus:outline-none focus:ring focus:border-blue-300 placeholder-gray-400"
+        />
         <input
           type="text"
           name="name"
@@ -93,13 +103,14 @@ const Page = () => {
           onChange={handleInputChange}
           className="text-sm border-2 border-gray-600 outline-none bg-gray-700 text-gray-300 p-2  rounded-md focus:outline-none focus:ring focus:border-blue-300"
         />
-        <button className="mb-4 text-sm border-2 border-transparent hover:border-blue-500 focus:border-blue-500 transition-all duration-300 ease-in-out py-1 px-2 rounded-md bg-gray-800 text-white hover:bg-gray-700 focus:outline-none">
+
+        <button className="mb-4 text-sm border-2 border-transparent hover:border-blue-500 focus:border-blue-500 transition-all duration-300 ease-in-out py-2 px-2 rounded-md bg-gray-800 text-white hover:bg-gray-700 focus:outline-none">
           Add
         </button>
       </form>
       {error && <ErrorBox error={error} />}
       {isLoading && <LoadingSpinner />}
-      <ErrorBox error="Currently adding functionality is only available for developers." />
+      <ErrorBox error="Developer password is required for adding torrents." />
     </div>
   );
 };
